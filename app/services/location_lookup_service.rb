@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NotFoundError < StandardError; end
 
 class LocationLookupService
@@ -13,6 +15,6 @@ class LocationLookupService
     results = Geocoder.search(@query)
     raise NotFoundError if results.empty?
     lat, lon = results.first.coordinates
-    return Location.new(lat: lat, lon: lon)
+    Location.new(lat: lat, lon: lon)
   end
 end

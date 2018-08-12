@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 module Api
   module V1
-    class LocationsController < ApiController
+    class LocationsController < ApplicationController
       def index
         location = LocationLookupService.find(query: query_param)
-        render json: LocationSerializer.new(location), content_type: CONTENT_TYPE
-      rescue NotFoundError => e
+        render json: LocationSerializer.new(location),
+               content_type: CONTENT_TYPE
+      rescue NotFoundError
         render_error(status: 404,
                      title: 'Not Found',
                      message: 'The specified location could not be found')
