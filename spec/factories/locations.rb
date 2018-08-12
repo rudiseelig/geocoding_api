@@ -8,7 +8,7 @@ FactoryBot.define do
     skip_create
 
     initialize_with do
-      new(lat: lat, lon: lon)
+      new(lat, lon)
     end
   end
 end

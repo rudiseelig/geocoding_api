@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby File.read('.ruby-version').strip
 
@@ -12,11 +11,11 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.0'
 gem 'redis'
 
-gem 'fast_jsonapi'
 gem 'geocoder'
 gem 'jwt'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'guard-rspec', require: false
   gem 'rspec'

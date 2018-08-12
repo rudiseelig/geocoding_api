@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Handles user Authentication. Takes a users' email and password and, after
+# successful authentication, returns a JSON Web Token with user_id and an
+# expiration timer. On error, it will append them and return nil.
 class AuthenticateUserCommand < BaseCommand
   private
 

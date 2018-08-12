@@ -8,7 +8,7 @@ class Location
 
   validates :lat, :lon, numericality: true
 
-  def initialize(lat:, lon:)
+  def initialize(lat, lon)
     @lat = lat
     @lon = lon
   end

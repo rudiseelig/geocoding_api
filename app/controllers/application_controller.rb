@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::API
   include TokenAuthenticatable
   rescue_from ActionController::ParameterMissing, with: :param_missing
-  CONTENT_TYPE = 'application/vnd.api+json'
+  CONTENT_TYPE = 'application/json'
 
   private
 

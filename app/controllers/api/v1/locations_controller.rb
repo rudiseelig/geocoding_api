@@ -4,13 +4,12 @@ module Api
   module V1
     class LocationsController < ApplicationController
       def index
-        location = LocationLookupService.find(query: query_param)
-        render json: LocationSerializer.new(location),
-               content_type: CONTENT_TYPE
-      rescue NotFoundError
-        render_error(status: 404,
-                     title: 'Not Found',
-                     message: 'The specified location could not be found')
+        location = GeocodeLocationCommand.call(query_param)
+        if location.success?
+          render json: { location: location.result }
+        else
+          render json: { error: location.errors }
+        end
       end
 
       private

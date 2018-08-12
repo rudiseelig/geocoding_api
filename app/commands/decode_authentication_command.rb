@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Manages Authorization headers of incoming requests and delegates the decoding
+# of JSON Web Tokens to the JwtService. When a valid user has been found, it is
+# returned. Otherwise, it adds errors and returns nil.
 class DecodeAuthenticationCommand < BaseCommand
   private
 

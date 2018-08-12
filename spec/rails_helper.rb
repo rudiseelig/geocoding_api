@@ -9,6 +9,8 @@ if Rails.env.production?
 end
 
 require 'rspec/rails'
+require 'spec_helper'
+require 'geocode_helper'
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods

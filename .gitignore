@@ -25,3 +25,5 @@
 
 # swap files
 *.sw*
+
+.DS_Store

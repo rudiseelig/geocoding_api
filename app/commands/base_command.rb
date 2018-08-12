@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# Base Command class that every other command class inherits from. It
+# implements the basic command pattern: each command will return an instance of
+# themselves after a payload function is called; also each of them will publish
+# an `errors`, `success` and `success?` method.
 class BaseCommand
   attr_reader :result
 
